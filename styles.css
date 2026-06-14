@@ -1,0 +1,12 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-image: radial-gradient(#fff 60%, #2272 85%, #2273);
+    font-size: 2rem;
+}
+
+div{
+    padding: 5rem;
+    box-shadow: 0 0 20px 1px rgba(2, 50, 224, 0.133);
+}

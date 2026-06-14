@@ -1,0 +1,27 @@
+name: Notificación de Despliegue a ntfy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+
+      - name: Ejecutar Hola Mundo
+        run: node index.js
+
+
+      - name: Enviar alerta a ntfy
+        run: |
+          curl \
+            -H "Title: Push de Dian Delgado 2024-2385" \
+            -H "Priority: default" \
+            -d "${{ github.actor }} ha subido código. Push ${{github.event.head_commit.message}}" \
+            ntfy.sh/devops-itla
